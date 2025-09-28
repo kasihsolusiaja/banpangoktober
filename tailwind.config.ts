@@ -22,6 +22,20 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          hover: "hsl(var(--primary-hover))",
+        },
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
+          hover: "hsl(var(--success-hover))",
+        },
+        banpang: {
+          blue: "hsl(var(--banpang-blue))",
+          "blue-light": "hsl(var(--banpang-blue-light))",
+          green: "hsl(var(--banpang-green))",
+          "green-light": "hsl(var(--banpang-green-light))",
+          orange: "hsl(var(--banpang-orange))",
+          gray: "hsl(var(--banpang-gray))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -62,6 +76,19 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      backgroundImage: {
+        "gradient-primary": "var(--gradient-primary)",
+        "gradient-success": "var(--gradient-success)",
+        "gradient-header": "var(--gradient-header)",
+      },
+      boxShadow: {
+        soft: "var(--shadow-soft)",
+        medium: "var(--shadow-medium)",
+        strong: "var(--shadow-strong)",
+      },
+      transitionProperty: {
+        smooth: "var(--transition-smooth)",
       },
       keyframes: {
         "accordion-down": {
