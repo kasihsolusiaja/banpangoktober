@@ -14,11 +14,11 @@ const RealTimeClock = () => {
   }, []);
 
   const formatTime = (date: Date) => {
-    return date.toLocaleTimeString('id-ID', {
+    return date.toLocaleTimeString('en-US', {
       hour: '2-digit',
       minute: '2-digit',
       second: '2-digit',
-      hour12: false,
+      hour12: true,
     });
   };
 
@@ -32,21 +32,21 @@ const RealTimeClock = () => {
   };
 
   return (
-    <Card className="p-8 bg-gradient-primary text-white shadow-medium">
-      <div className="flex flex-col items-center space-y-4">
-        <div className="flex items-center justify-center space-x-4">
-          <Clock className="h-8 w-8 animate-pulse" />
-          <div className="text-6xl font-bold font-mono tracking-wider">
+    <Card className="p-4 bg-gradient-primary text-white shadow-medium">
+      <div className="flex flex-col items-center space-y-3">
+        <div className="flex items-center justify-center gap-3">
+          <Clock className="h-6 w-6 md:h-8 md:w-8 animate-pulse" />
+          <div className="text-4xl md:text-6xl font-bold font-mono tracking-wider">
             {formatTime(currentTime)}
           </div>
         </div>
-        <div className="flex items-center space-x-2 text-lg">
-          <Calendar className="h-5 w-5" />
-          <div className="opacity-90">
+        <div className="flex items-center gap-2 text-sm md:text-base">
+          <Calendar className="h-4 w-4" />
+          <div className="opacity-90 text-center">
             {formatDate(currentTime)}
           </div>
         </div>
-        <div className="text-sm opacity-75">
+        <div className="text-xs opacity-75">
           Sistem Absensi BANPANG
         </div>
       </div>

@@ -120,52 +120,52 @@ const ScheduleCalendar = () => {
 
   return (
     <Card className="shadow-medium">
-      <CardHeader className="bg-gradient-header text-white">
-        <CardTitle className="flex items-center space-x-2">
-          <Calendar className="h-5 w-5" />
-          <span>Jadwal Penyaluran BANPANG - Oktober 2025</span>
+      <CardHeader className="bg-gradient-header text-white p-4">
+        <CardTitle className="flex items-center gap-2 text-sm md:text-base">
+          <Calendar className="h-4 w-4" />
+          <span>Jadwal Penyaluran - Okt 2025</span>
         </CardTitle>
       </CardHeader>
       <CardContent className="p-0">
         <div className="divide-y">
           {scheduleData.map((schedule) => (
-            <div key={schedule.id} className="p-4 hover:bg-muted/50 transition-colors">
-              <div className="flex items-start justify-between">
+            <div key={schedule.id} className="p-3 hover:bg-muted/50 transition-colors">
+              <div className="flex items-start justify-between gap-2">
                 <div className="flex-1">
-                  <div className="flex items-center space-x-3 mb-2">
-                    <div className="text-2xl font-bold text-primary">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="text-xl md:text-2xl font-bold text-primary">
                       {formatDate(schedule.date)}
                     </div>
-                    <div>
-                      <div className="font-medium text-foreground">
+                    <div className="flex-1">
+                      <div className="font-medium text-sm text-foreground">
                         {schedule.day}
                       </div>
-                      <div className="text-sm text-muted-foreground">
+                      <div className="text-xs text-muted-foreground">
                         {schedule.date}
                       </div>
                     </div>
                   </div>
                   
-                  <div className="space-y-2 ml-12">
-                    <div className="flex items-center space-x-2 text-sm">
-                      <MapPin className="h-4 w-4 text-banpang-blue" />
+                  <div className="space-y-1">
+                    <div className="flex items-center gap-1 text-xs">
+                      <MapPin className="h-3 w-3 text-banpang-blue shrink-0" />
                       <span className="font-medium">{schedule.location}</span>
                     </div>
                     
-                    <div className="flex items-center space-x-4">
-                      <div className="flex items-center space-x-2 text-sm">
-                        <Users className="h-4 w-4 text-banpang-green" />
+                    <div className="flex items-center gap-3 text-xs">
+                      <div className="flex items-center gap-1">
+                        <Users className="h-3 w-3 text-banpang-green" />
                         <span>{schedule.team}</span>
                       </div>
-                      <div className="flex items-center space-x-2 text-sm">
-                        <Package className="h-4 w-4 text-banpang-orange" />
+                      <div className="flex items-center gap-1">
+                        <Package className="h-3 w-3 text-banpang-orange" />
                         <span>{schedule.quota}</span>
                       </div>
                     </div>
                   </div>
                 </div>
                 
-                <div>
+                <div className="shrink-0">
                   {getStatusBadge(schedule.status)}
                 </div>
               </div>

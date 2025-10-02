@@ -130,32 +130,32 @@ const TeamMembers = () => {
 
   return (
     <Card className="shadow-medium">
-      <CardHeader className="bg-gradient-header text-white">
+      <CardHeader className="bg-gradient-header text-white p-4">
         <CardTitle className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <Users className="h-5 w-5" />
-            <span>Daftar Tim Salur</span>
+          <div className="flex items-center gap-2">
+            <Users className="h-4 w-4" />
+            <span className="text-sm md:text-base">Daftar Tim Salur</span>
           </div>
-          <div className="text-sm font-normal">
+          <div className="text-xs font-normal">
             {stats.hadir + stats.terlambat}/{teamData.length} Hadir
           </div>
         </CardTitle>
       </CardHeader>
       <CardContent className="p-0">
         {/* Statistics */}
-        <div className="p-4 bg-muted/30 border-b">
-          <div className="grid grid-cols-3 gap-4 text-center">
+        <div className="p-3 bg-muted/30 border-b">
+          <div className="grid grid-cols-3 gap-2 text-center">
             <div>
-              <div className="text-2xl font-bold text-success">{stats.hadir}</div>
-              <div className="text-sm text-muted-foreground">Hadir</div>
+              <div className="text-xl font-bold text-success">{stats.hadir}</div>
+              <div className="text-xs text-muted-foreground">Hadir</div>
             </div>
             <div>
-              <div className="text-2xl font-bold text-banpang-orange">{stats.terlambat}</div>
-              <div className="text-sm text-muted-foreground">Terlambat</div>
+              <div className="text-xl font-bold text-banpang-orange">{stats.terlambat}</div>
+              <div className="text-xs text-muted-foreground">Terlambat</div>
             </div>
             <div>
-              <div className="text-2xl font-bold text-destructive">{stats.tidak_hadir}</div>
-              <div className="text-sm text-muted-foreground">Tidak Hadir</div>
+              <div className="text-xl font-bold text-destructive">{stats.tidak_hadir}</div>
+              <div className="text-xs text-muted-foreground">Tidak Hadir</div>
             </div>
           </div>
         </div>
@@ -163,32 +163,34 @@ const TeamMembers = () => {
         {/* Team Members List */}
         <div className="divide-y">
           {teamData.map((member) => (
-            <div key={member.id} className="p-4 hover:bg-muted/30 transition-colors">
-              <div className="flex items-center space-x-4">
-                <Avatar>
-                  <AvatarFallback className="bg-primary text-primary-foreground">
+            <div key={member.id} className="p-3 hover:bg-muted/30 transition-colors">
+              <div className="flex items-center gap-3">
+                <Avatar className="h-10 w-10">
+                  <AvatarFallback className="bg-primary text-primary-foreground text-sm">
                     {getInitials(member.name)}
                   </AvatarFallback>
                 </Avatar>
                 
-                <div className="flex-1">
-                  <div className="flex items-center space-x-2 mb-1">
-                    <h4 className="font-medium">{member.name}</h4>
-                    <Badge variant="outline" className="text-xs">
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-1 mb-1">
+                    <h4 className="font-medium text-sm truncate">{member.name}</h4>
+                    <Badge variant="outline" className="text-[10px] shrink-0">
                       {member.position}
                     </Badge>
                   </div>
-                  <div className="text-sm text-muted-foreground">
+                  <div className="text-xs text-muted-foreground">
                     {member.team}
                   </div>
-                  <div className="text-xs text-muted-foreground mt-1">
-                    Check-in: {member.checkIn} • {member.location}
+                  <div className="text-[10px] text-muted-foreground mt-0.5">
+                    {member.checkIn} • {member.location}
                   </div>
                 </div>
                 
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center gap-1 shrink-0">
                   {getStatusIcon(member.status)}
-                  {getStatusBadge(member.status)}
+                  <div className="hidden md:block">
+                    {getStatusBadge(member.status)}
+                  </div>
                 </div>
               </div>
             </div>

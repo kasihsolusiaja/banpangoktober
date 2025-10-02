@@ -60,26 +60,26 @@ const AttendanceForm = () => {
 
   return (
     <Card className="shadow-medium">
-      <CardHeader className="bg-gradient-header text-white">
-        <CardTitle className="flex items-center space-x-2">
-          <Clock className="h-5 w-5" />
+      <CardHeader className="bg-gradient-header text-white p-4">
+        <CardTitle className="flex items-center gap-2 text-base">
+          <Clock className="h-4 w-4" />
           <span>Absensi Tim Salur</span>
         </CardTitle>
       </CardHeader>
-      <CardContent className="p-6 space-y-4">
+      <CardContent className="p-4 space-y-3">
         <div>
-          <Label htmlFor="nama">Nama Petugas</Label>
-          <Input id="nama" placeholder="Masukkan nama petugas" />
+          <Label htmlFor="nama" className="text-sm">Nama Petugas</Label>
+          <Input id="nama" placeholder="Masukkan nama petugas" className="mt-1" />
         </div>
 
         <div>
-          <Label>Lokasi GPS</Label>
-          <div className="flex space-x-2 mt-1">
+          <Label className="text-sm">Lokasi GPS</Label>
+          <div className="flex gap-2 mt-1">
             <Input 
               value={location} 
-              placeholder="Koordinat GPS akan muncul di sini"
+              placeholder="Koordinat GPS"
               readOnly
-              className="flex-1"
+              className="flex-1 text-sm"
             />
             <Button 
               onClick={getCurrentLocation}
@@ -91,60 +91,66 @@ const AttendanceForm = () => {
             </Button>
           </div>
           {location && (
-            <Badge variant="outline" className="mt-2">
+            <Badge variant="outline" className="mt-2 text-xs">
               📍 Lokasi berhasil dideteksi
             </Badge>
           )}
         </div>
 
         <div>
-          <Label htmlFor="photo">Foto Bukti</Label>
+          <Label htmlFor="photo" className="text-sm">Foto Bukti</Label>
           <div className="mt-1">
-            <Input
+            <label htmlFor="photo" className="block">
+              <div className="flex items-center justify-center gap-2 px-4 py-4 border-2 border-dashed rounded-lg cursor-pointer hover:bg-muted/50 transition-colors active:bg-muted">
+                <Camera className="h-6 w-6 text-primary" />
+                <span className="text-sm font-medium">📸 Buka Kamera</span>
+              </div>
+            </label>
+            <input
               id="photo"
               type="file"
               accept="image/*"
               capture="environment"
               onChange={handlePhotoUpload}
-              className="cursor-pointer"
+              className="hidden"
             />
           </div>
           {photo && (
-            <Badge variant="outline" className="mt-2">
-              📷 {photo.name}
+            <Badge variant="outline" className="mt-2 text-xs">
+              ✅ {photo.name}
             </Badge>
           )}
         </div>
 
-        <div className="flex space-x-3 pt-4">
+        <div className="flex gap-3 pt-2">
           {!isCheckedIn ? (
             <Button 
               onClick={handleCheckIn}
-              className="flex-1 bg-gradient-success hover:bg-success-hover"
+              className="flex-1 bg-gradient-success hover:bg-success-hover py-6 text-base"
             >
-              <CheckCircle className="h-4 w-4 mr-2" />
+              <CheckCircle className="h-5 w-5 mr-2" />
               Absen Masuk
             </Button>
           ) : (
             <Button 
               onClick={handleCheckOut}
               variant="destructive"
-              className="flex-1"
+              className="flex-1 py-6 text-base"
             >
-              <Clock className="h-4 w-4 mr-2" />
+              <Clock className="h-5 w-5 mr-2" />
               Absen Keluar
             </Button>
           )}
         </div>
 
         {isCheckedIn && (
-          <div className="p-4 bg-success/10 border border-success rounded-lg">
-            <div className="flex items-center space-x-2 text-success">
-              <CheckCircle className="h-5 w-5" />
-              <span className="font-medium">Status: Sedang Bertugas</span>
+          <div className="p-3 bg-success/10 border border-success rounded-lg">
+            <div className="flex items-center gap-2 text-success">
+              <CheckCircle className="h-4 w-4" />
+              <span className="font-medium text-sm">Sedang Bertugas</span>
             </div>
-            <div className="text-sm text-muted-foreground mt-1">
-              Absen masuk tercatat pada {new Date().toLocaleTimeString('id-ID')}
+            <div className="text-xs text-muted-foreground mt-1">
+              Check-in: {new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })}
             </div>
           </div>
         )}
