@@ -32,27 +32,22 @@ const RealTimeClock = () => {
   };
 
   return (
-    <Card className="p-6 bg-gradient-primary text-white shadow-medium">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-3">
-          <Clock className="h-6 w-6" />
-          <div>
-            <div className="text-2xl font-bold font-mono">
-              {formatTime(currentTime)}
-            </div>
-            <div className="text-sm opacity-90">WIB</div>
+    <Card className="p-8 bg-gradient-primary text-white shadow-medium">
+      <div className="flex flex-col items-center space-y-4">
+        <div className="flex items-center justify-center space-x-4">
+          <Clock className="h-8 w-8 animate-pulse" />
+          <div className="text-6xl font-bold font-mono tracking-wider">
+            {formatTime(currentTime)}
           </div>
         </div>
-        <div className="flex items-center space-x-3">
-          <Calendar className="h-6 w-6" />
-          <div className="text-right">
-            <div className="text-sm opacity-90">
-              {formatDate(currentTime)}
-            </div>
-            <div className="text-xs opacity-75">
-              Sistem Absensi BANPANG
-            </div>
+        <div className="flex items-center space-x-2 text-lg">
+          <Calendar className="h-5 w-5" />
+          <div className="opacity-90">
+            {formatDate(currentTime)}
           </div>
+        </div>
+        <div className="text-sm opacity-75">
+          Sistem Absensi BANPANG
         </div>
       </div>
     </Card>

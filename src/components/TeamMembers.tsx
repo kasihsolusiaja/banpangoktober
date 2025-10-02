@@ -179,7 +179,7 @@ const TeamMembers = () => {
                     </Badge>
                   </div>
                   <div className="text-sm text-muted-foreground">
-                    {member.nip} • {member.team}
+                    {member.team}
                   </div>
                   <div className="text-xs text-muted-foreground mt-1">
                     Check-in: {member.checkIn} • {member.location}

@@ -19,7 +19,7 @@ const Index = () => {
               <div>
                 <h1 className="text-2xl font-bold">SISTEM ABSENSI BANPANG</h1>
                 <p className="text-sm opacity-90">
-                  Bantuan Pangan BULOG - Oktober 2024
+                  Bantuan Pangan BULOG - Oktober 2025
                 </p>
               </div>
             </div>
@@ -37,7 +37,7 @@ const Index = () => {
         <RealTimeClock />
 
         {/* Stats Overview */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <Card className="bg-gradient-primary text-white shadow-soft">
             <CardHeader className="pb-2">
               <CardTitle className="text-lg flex items-center space-x-2">
@@ -76,19 +76,6 @@ const Index = () => {
               <div className="text-sm opacity-90">Sedang berlangsung</div>
             </CardContent>
           </Card>
-
-          <Card className="border-2 border-banpang-blue shadow-soft">
-            <CardHeader className="pb-2">
-              <CardTitle className="text-lg flex items-center space-x-2 text-banpang-blue">
-                <Shield className="h-5 w-5" />
-                <span>Target Bulan</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold text-banpang-blue">1,650 Paket</div>
-              <div className="text-sm text-muted-foreground">Oktober 2024</div>
-            </CardContent>
-          </Card>
         </div>
 
         {/* Main Content Grid */}
@@ -111,7 +98,7 @@ const Index = () => {
         <div className="container mx-auto px-4 py-8">
           <div className="text-center text-muted-foreground">
             <p className="text-sm">
-              © 2024 Perum BULOG - Sistem Absensi Penyaluran Bantuan Pangan
+              © 2025 Perum BULOG - Sistem Absensi Penyaluran Bantuan Pangan
             </p>
             <p className="text-xs mt-2">
               Divisi Regional Jakarta | Hubungi IT Support: ext. 1234

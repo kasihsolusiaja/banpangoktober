@@ -3,48 +3,48 @@ import { Badge } from '@/components/ui/badge';
 import { Calendar, MapPin, Users, Package } from 'lucide-react';
 
 const ScheduleCalendar = () => {
-  // Sample schedule data for October 2024
+  // Sample schedule data for October 2025
   const scheduleData = [
     {
       id: 1,
-      date: '2024-10-01',
-      day: 'Selasa',
+      date: '2025-10-01',
+      day: 'Rabu',
       location: 'Kelurahan Pasar Minggu',
       team: 'Tim A (5 orang)',
       quota: '150 paket',
-      status: 'completed'
+      status: 'scheduled'
     },
     {
       id: 2,
-      date: '2024-10-03',
-      day: 'Kamis',
+      date: '2025-10-03',
+      day: 'Jumat',
       location: 'Kelurahan Kebayoran Lama',
       team: 'Tim B (4 orang)',
       quota: '120 paket',
-      status: 'completed'
+      status: 'scheduled'
     },
     {
       id: 3,
-      date: '2024-10-07',
+      date: '2025-10-06',
       day: 'Senin',
       location: 'Kelurahan Pancoran',
       team: 'Tim A (5 orang)',
       quota: '180 paket',
-      status: 'completed'
+      status: 'scheduled'
     },
     {
       id: 4,
-      date: '2024-10-10',
-      day: 'Kamis',
+      date: '2025-10-08',
+      day: 'Rabu',
       location: 'Kelurahan Tebet',
       team: 'Tim C (6 orang)',
       quota: '200 paket',
-      status: 'ongoing'
+      status: 'scheduled'
     },
     {
       id: 5,
-      date: '2024-10-14',
-      day: 'Senin',
+      date: '2025-10-10',
+      day: 'Jumat',
       location: 'Kelurahan Mampang Prapatan',
       team: 'Tim B (4 orang)',
       quota: '140 paket',
@@ -52,8 +52,8 @@ const ScheduleCalendar = () => {
     },
     {
       id: 6,
-      date: '2024-10-17',
-      day: 'Kamis',
+      date: '2025-10-13',
+      day: 'Senin',
       location: 'Kelurahan Jagakarsa',
       team: 'Tim A (5 orang)',
       quota: '160 paket',
@@ -61,8 +61,8 @@ const ScheduleCalendar = () => {
     },
     {
       id: 7,
-      date: '2024-10-21',
-      day: 'Senin',
+      date: '2025-10-15',
+      day: 'Rabu',
       location: 'Kelurahan Cilandak',
       team: 'Tim C (6 orang)',
       quota: '190 paket',
@@ -70,8 +70,8 @@ const ScheduleCalendar = () => {
     },
     {
       id: 8,
-      date: '2024-10-24',
-      day: 'Kamis',
+      date: '2025-10-17',
+      day: 'Jumat',
       location: 'Kelurahan Pesanggrahan',
       team: 'Tim B (4 orang)',
       quota: '130 paket',
@@ -79,7 +79,7 @@ const ScheduleCalendar = () => {
     },
     {
       id: 9,
-      date: '2024-10-28',
+      date: '2025-10-20',
       day: 'Senin',
       location: 'Kelurahan Setia Budi',
       team: 'Tim A (5 orang)',
@@ -88,8 +88,8 @@ const ScheduleCalendar = () => {
     },
     {
       id: 10,
-      date: '2024-10-31',
-      day: 'Kamis',
+      date: '2025-10-22',
+      day: 'Rabu',
       location: 'Kelurahan Menteng',
       team: 'Tim C (6 orang)',
       quota: '210 paket',
@@ -123,7 +123,7 @@ const ScheduleCalendar = () => {
       <CardHeader className="bg-gradient-header text-white">
         <CardTitle className="flex items-center space-x-2">
           <Calendar className="h-5 w-5" />
-          <span>Jadwal Penyaluran BANPANG - Oktober 2024</span>
+          <span>Jadwal Penyaluran BANPANG - Oktober 2025</span>
         </CardTitle>
       </CardHeader>
       <CardContent className="p-0">

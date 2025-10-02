@@ -67,15 +67,9 @@ const AttendanceForm = () => {
         </CardTitle>
       </CardHeader>
       <CardContent className="p-6 space-y-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <Label htmlFor="nama">Nama Petugas</Label>
-            <Input id="nama" placeholder="Masukkan nama petugas" />
-          </div>
-          <div>
-            <Label htmlFor="nip">NIP/ID Petugas</Label>
-            <Input id="nip" placeholder="Masukkan NIP/ID" />
-          </div>
+        <div>
+          <Label htmlFor="nama">Nama Petugas</Label>
+          <Input id="nama" placeholder="Masukkan nama petugas" />
         </div>
 
         <div>
